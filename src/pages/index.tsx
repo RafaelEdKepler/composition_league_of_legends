@@ -1,12 +1,15 @@
 import Head from 'next/head'
 import GlobalStyle from '../styles/global';
-import ChampionBox from '../components/ChampionBox'
+import Team from '../components/Team';
+import { SelectContextProvider } from '../context/selectContext';
 
 export default function Home() {
   return (
     <>
-      <GlobalStyle />
-      <ChampionBox />
+      <SelectContextProvider>
+        <GlobalStyle />
+        <Team />
+      </SelectContextProvider>
     </>
   )
 }
